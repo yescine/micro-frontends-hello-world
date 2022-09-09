@@ -1,5 +1,10 @@
 import faker from 'faker'
 
-const cardText=`<div>you have <strong>${faker.random.number()}</strong> in your carts</div>`
+export const mount = (el) => {
+  const cardText = `<div>you have <strong>${faker.random.number()}</strong> in your carts</div>`
 
-document.querySelector("#dev-cart").innerHTML = cardText
+  el.innerHTML = cardText
+}
+
+const elem = document.querySelector("#dev-cart");
+if(elem) mount(elem)
